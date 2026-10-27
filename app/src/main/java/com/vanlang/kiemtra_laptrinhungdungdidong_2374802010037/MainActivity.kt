@@ -9,6 +9,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import android.content.Intent
 
 class MainActivity : AppCompatActivity() {
 
@@ -61,6 +62,10 @@ class MainActivity : AppCompatActivity() {
 
                 else -> {
                     tvStatus.text = "Xác thực thành công!"
+
+                    val intent = Intent(this, ProfileActivity::class.java)
+                    intent.putExtra("EMAIL", email)
+                    startActivity(intent)
                 }
             }
         }
